@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all',
                                               'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <p><%= link_to("Home", static_pages_home_url) %> &nbsp
+    <%= link_to("About", static_pages_about_url) %> &nbsp
+    <%= link_to("Help", static_pages_help_url) %> &nbsp
+    <%= link_to("Contact", static_pages_contact_url) %> &nbsp </p>
     <%= yield %>
   </body>
 </html>
